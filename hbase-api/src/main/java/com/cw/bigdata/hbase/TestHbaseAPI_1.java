@@ -12,7 +12,7 @@ import org.apache.hadoop.hbase.util.Bytes;
 public class TestHbaseAPI_1 {
     public static void main(String[] args) throws Exception {
 
-        // 通过java代码访问mysql数据库:JDBC
+        // TODO 通过java代码访问mysql数据库:JDBC
         // 1) 加载数据库驱动
         // 2) 获取数据库连接(url,user,password)
         // 3) 获取数据库操作对象
@@ -20,13 +20,15 @@ public class TestHbaseAPI_1 {
         // 5) 执行数据库操作
         // 6) 获取查询结果ResultSet
 
-        // 通过java代码访问hbase数据库
+        // TODO 通过java代码访问hbase数据库
 
         // 0) 创建配置对象,获取hbase的连接
         Configuration conf = HBaseConfiguration.create();
-        // 如果在项目中没有加入hbase-site.xml配置文件,则可以采用以下方式配置
-        // conf.set("hbase.zookeeper.quorum", "cm1.cdh.com,cm3.cdh.com,cm2.cdh.com");
-        // conf.set("hbase.zookeeper.property.clientPort", "2181");
+        /*
+            如果在项目中没有加入hbase-site.xml配置文件,则可以采用以下方式配置
+            conf.set("hbase.zookeeper.quorum", "cm1.cdh.com,cm3.cdh.com,cm2.cdh.com");
+            conf.set("hbase.zookeeper.property.clientPort", "2181");
+        */
 
         // 1) 获取hbase连接对象
         // classLoader : Thread.currentThread.getContextClassLoader
