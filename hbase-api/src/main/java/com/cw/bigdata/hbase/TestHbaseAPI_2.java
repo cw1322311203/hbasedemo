@@ -15,10 +15,9 @@ public class TestHbaseAPI_2 {
 
         Connection connection = ConnectionFactory.createConnection(conf);
 
-        TableName tableName = TableName.valueOf("cw:student");
+        TableName tableName = TableName.valueOf("student");
         // TODO 删除表
         /*
-        TableName tableName = TableName.valueOf("cw:student");
 
         Admin admin = connection.getAdmin();
         if (admin.tableExists(tableName)) {
@@ -28,6 +27,8 @@ public class TestHbaseAPI_2 {
 
             // 删除表
             admin.deleteTable(tableName);
+
+            System.out.println(tableName + "表删除成功!");
         }
         */
 
@@ -43,6 +44,7 @@ public class TestHbaseAPI_2 {
         */
 
         // TODO 扫描数据
+
         Table table = connection.getTable(tableName);
         Scan scan = new Scan();
         ResultScanner scanner = table.getScanner(scan);
