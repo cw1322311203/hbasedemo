@@ -42,6 +42,43 @@ public class HBaseUtil {
     }
 
     /**
+     * 生成分区键
+     *
+     * @param regionCount
+     * @return
+     */
+    public static byte[][] genRegionKeys(int regionCount) {
+        byte[][] bs = new byte[regionCount - 1][];
+
+        for (int i = 0; i < regionCount - 1; i++) {
+            bs[i] = Bytes.toBytes(i + "|");
+        }
+        return bs;
+    }
+
+    /**
+     * 生成分区号
+     *
+     * @param rowkey
+     * @param regionCount
+     * @return
+     */
+    public static String genRegionNum(String rowkey, int regionCount) {
+
+        int regionNum;
+        int hash = rowkey.hashCode();
+
+        if (regionCount > 0 && (regionCount & (regionCount - 1)) == 0) {
+            // 2^n
+            regionNum = hash & (regionCount - 1);
+        } else {
+            regionNum = hash % regionCount;
+        }
+
+        return regionNum + "_" + rowkey;
+    }
+
+    /**
      * TODO 增加数据
      *
      * @param rowkey
