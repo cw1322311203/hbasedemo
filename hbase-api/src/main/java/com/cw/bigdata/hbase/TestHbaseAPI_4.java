@@ -36,6 +36,7 @@ public class TestHbaseAPI_4 {
         // FilterList.Operator.MUST_PASS_ALL : and
         // FilterList.Operator.MUST_PASS_ONE : or
         FilterList list = new FilterList(FilterList.Operator.MUST_PASS_ONE); // or
+        //Filter filter = new PrefixFilter(Bytes.toBytes("user"));
 
         RowFilter rf = new RowFilter(CompareFilter.CompareOp.EQUAL, bc);
 
