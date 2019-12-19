@@ -208,7 +208,7 @@ public class HBaseDao {
     public static void deleteAttends(String uid, String... dels) throws IOException {
 
         if (dels.length <= 0) {
-            System.out.println("请添加待取关的用户!");
+            System.err.println("请添加待取关的用户!");
             return;
         }
 
@@ -302,7 +302,7 @@ public class HBaseDao {
 
             // 8.解析内容并打印
             for (Cell contentCell : contentResult.rawCells()) {
-                System.out.println("RK:" + Bytes.toString(CellUtil.cloneRow(contentCell)) +
+                System.err.println("RK:" + Bytes.toString(CellUtil.cloneRow(contentCell)) +
                         ",CF:" + Bytes.toString(CellUtil.cloneFamily(contentCell)) +
                         ",CN:" + Bytes.toString(CellUtil.cloneQualifier(contentCell)) +
                         ",Value:" + Bytes.toString(CellUtil.cloneValue(contentCell)));
@@ -344,7 +344,7 @@ public class HBaseDao {
         for (Result result : resultScanner) {
 
             for (Cell cell : result.rawCells()) {
-                System.out.println("RK:" + Bytes.toString(CellUtil.cloneRow(cell)) +
+                System.err.println("RK:" + Bytes.toString(CellUtil.cloneRow(cell)) +
                         ",CF:" + Bytes.toString(CellUtil.cloneFamily(cell)) +
                         ",CN:" + Bytes.toString(CellUtil.cloneQualifier(cell)) +
                         ",Value:" + Bytes.toString(CellUtil.cloneValue(cell)));
