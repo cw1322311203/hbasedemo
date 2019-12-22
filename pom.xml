@@ -14,6 +14,7 @@
         <module>hbase-coprocesser</module>
         <module>hbase-mr-mysql</module>
         <module>guli-weibo</module>
+        <module>hbase-export-mysql</module>
     </modules>
 
     <dependencies>
