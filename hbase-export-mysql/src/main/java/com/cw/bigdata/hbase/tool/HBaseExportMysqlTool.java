@@ -19,6 +19,10 @@ import java.util.Map;
 
 /**
  * HBase导出到MySQL
+ * 封装后的代码
+ * 可使用以下命令导出
+ *   yarn jar xxx.jar --hbase-table emp --hbase-family info  --mysql-table student
+ *
  */
 public class HBaseExportMysqlTool implements Tool {
 
