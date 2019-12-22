@@ -5,7 +5,6 @@ import com.cw.bigdata.hbase.format.MysqlOutputFormat;
 import com.cw.bigdata.hbase.mapper.ScanHbaseMapper;
 import com.cw.bigdata.hbase.reducer.Hbase2MysqlReducer;
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.mapreduce.TableMapReduceUtil;
 import org.apache.hadoop.hbase.util.Bytes;
